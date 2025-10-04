@@ -56,7 +56,7 @@ def get_predictions(video_path):
             avg_predictions = np.mean(PRED_QUEUE, axis=0)
             pred_class = np.argmax(avg_predictions)
             pred_prob = avg_predictions[pred_class]
-            if preb_prob>0.7:
+            if pred_prob>0.7:
                 label = "Non-Violence" if pred_class == 1 else "Violence"
                 confidence = pred_prob * 100
             else:
