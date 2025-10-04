@@ -77,6 +77,8 @@ def get_predictions(video_path):
     cap.release()
 
 # Streamlit UI
+logo_path="tay_thanh_logo.jpg"
+st.image(logo_path. caption="Tay_Thanhlogo",width=200)
 st.title("Violence Detection with Deep Learning")
 st.write("Upload a video to detect violence scenes.")
 
