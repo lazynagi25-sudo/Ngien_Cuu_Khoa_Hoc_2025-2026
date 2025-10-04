@@ -1,0 +1,7 @@
+streamlit
+numpy
+pandas
+scikit-learn
+jason
+tensorflow
+opencv-python
