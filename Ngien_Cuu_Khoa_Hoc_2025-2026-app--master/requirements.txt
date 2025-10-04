@@ -4,4 +4,4 @@ pandas
 scikit-learn
 jason
 tensorflow
-opencv-python
+cv2
