@@ -4,4 +4,4 @@ pandas
 scikit-learn
 jason
 tensorflow
-opencv-python
+opencv-python-headless
