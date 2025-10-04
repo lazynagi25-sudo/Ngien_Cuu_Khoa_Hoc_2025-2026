@@ -56,19 +56,23 @@ def get_predictions(video_path):
             avg_predictions = np.mean(PRED_QUEUE, axis=0)
             pred_class = np.argmax(avg_predictions)
             pred_prob = avg_predictions[pred_class]
-            label = "Non-Violence" if pred_class == 1 else "Violence"
-            confidence = pred_prob * 100
+            if preb_prob>0.7:
+                label = "Non-Violence" if pred_class == 1 else "Violence"
+                confidence = pred_prob * 100
+            else:
+                label = None
+                confidence = pred_prob*0
         else:
             label = "Initializing..."
             confidence = 0
 
         # Display result
-        text = f"{label}: {confidence:.2f}%"
-        color = (0, 0, 255) if label == "Violence" else (0, 255, 0)
-        cv2.putText(frame, text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
-
-        # Display frame in Streamlit
-        st.image(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), caption='Prediction Frame', use_column_width=True)
+        if label:
+            text = f"{label}: {confidence:.2f}%"
+            color = (0, 0, 255) if label == "Violence" else (0, 255, 0)
+            cv2.putText(frame, text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
+            if label=="Violence":
+                st.image(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB), caption='Prediction Frame', use_column_width=True)
 
     cap.release()
 
