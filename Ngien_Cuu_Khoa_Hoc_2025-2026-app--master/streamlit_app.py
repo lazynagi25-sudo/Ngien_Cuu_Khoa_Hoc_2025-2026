@@ -79,7 +79,7 @@ def get_predictions(video_path):
 # Streamlit UI
 logo_path = "tay_thanh_logo.jpg"
 st.image(logo_path, caption=None,width=200)
-st.title("Nghien_Cuu_Khoa_Hoc_2025-2026")
+st.title(":rainbow[Ứng dụng công nghệ AI vào giám sát bạo lực học đường]")
 st.write("Upload a video to detect violence scenes.")
 
 # File uploader for video
