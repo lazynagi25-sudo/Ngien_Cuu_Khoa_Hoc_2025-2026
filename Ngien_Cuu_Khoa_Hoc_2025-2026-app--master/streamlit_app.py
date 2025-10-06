@@ -80,7 +80,7 @@ def get_predictions(video_path):
 logo_path = "tay_thanh_logo.jpg"
 st.image(logo_path, caption=None,width=200)
 st.title(":rainbow[Ứng dụng công nghệ AI vào giám sát bạo lực học đường]")
-st.write("Upload a video to detect violence scenes.")
+st.write("Vui lòng nhập vào video để bắt đầu phân tích")
 
 # File uploader for video
 video_file = st.file_uploader("Choose a video...", type=["mp4", "avi", "mov"])
