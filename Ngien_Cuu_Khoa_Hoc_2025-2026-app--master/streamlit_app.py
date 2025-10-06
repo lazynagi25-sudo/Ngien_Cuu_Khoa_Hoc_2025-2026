@@ -92,7 +92,7 @@ if video_file is not None:
 
     st.video(video_file)
 
-    st.write("Processing video...")
+    st.write("Xử lý video...")
 
     # Call the function to process the video and get predictions
     get_predictions("uploaded_video.mp4")
